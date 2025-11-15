@@ -7,14 +7,17 @@ interface Props {
 
 const { currentPath = '', class: className = '', mobile = false } = Astro.props;
 
-// Navigation links for wedding site - use relative paths
+// Get base path from Astro config
+const base = import.meta.env.BASE_URL;
+
+// Navigation links for wedding site
 const links = [
-  { href: './', label: 'Accueil' },
-  { href: './programme.html', label: 'Programme' },
-  { href: './infos.html', label: 'Infos pratiques' },
-  { href: './hebergements.html', label: 'Hébergements' },
-  { href: './galerie.html', label: 'Galerie' },
-  { href: './rsvp.html', label: 'RSVP' },
+  { href: `${base}`, label: 'Accueil' },
+  { href: `${base}programme.html`, label: 'Programme' },
+  { href: `${base}infos.html`, label: 'Infos pratiques' },
+  { href: `${base}hebergements.html`, label: 'Hébergements' },
+  { href: `${base}galerie.html`, label: 'Galerie' },
+  { href: `${base}rsvp.html`, label: 'RSVP' },
 ];
 
 // Check if a link is active

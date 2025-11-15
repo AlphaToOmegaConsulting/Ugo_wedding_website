@@ -100,6 +100,7 @@ const descriptionId = description ? `${dialogId}-description` : undefined;
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const dialogId = trigger.getAttribute('data-dialog-trigger');
+        if (!dialogId) return;
         const dialog = document.getElementById(dialogId) as HTMLDialogElement;
         if (dialog) {
           dialog.showModal();
@@ -111,6 +112,7 @@ const descriptionId = description ? `${dialogId}-description` : undefined;
     closeButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const dialogId = button.getAttribute('data-dialog-close');
+        if (!dialogId) return;
         const dialog = document.getElementById(dialogId) as HTMLDialogElement;
         if (dialog) {
           dialog.close();
@@ -134,7 +136,7 @@ const descriptionId = description ? `${dialogId}-description` : undefined;
       });
 
       // ESC key handling (native dialog behavior)
-      dialog.addEventListener('cancel', (e) => {
+      dialog.addEventListener('cancel', () => {
         // Allow default ESC behavior to close dialog
       });
     });

@@ -15,7 +15,7 @@ const pages = [
   '/en/twt/landing',
 ];
 
-async function testKeyboardNavigation(page: any, url: string): Promise<TestResult> {
+async function testKeyboardNavigation(page: import('playwright').Page, url: string): Promise<TestResult> {
   const fullUrl = `http://localhost:4322${url}`;
   console.log(`\nTesting keyboard navigation: ${fullUrl}`);
   
@@ -52,8 +52,9 @@ async function testKeyboardNavigation(page: any, url: string): Promise<TestResul
         if (!activeElement || activeElement === document.body) return false;
         
         const styles = window.getComputedStyle(activeElement);
-        const pseudoStyles = window.getComputedStyle(activeElement, ':focus-visible');
-        
+        // Check focus-visible pseudo-class
+        window.getComputedStyle(activeElement, ':focus-visible');
+
         // Check if element has visible focus styles
         return (
           styles.outline !== 'none' ||

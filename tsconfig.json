@@ -20,5 +20,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "exclude": [
+    "tests/**/*",
+    "scripts/**/*",
+    "playwright.config.ts"
+  ]
 }

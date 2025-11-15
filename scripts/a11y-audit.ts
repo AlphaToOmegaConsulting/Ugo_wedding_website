@@ -38,7 +38,7 @@ const pages = [
   '/en/404',
 ];
 
-async function auditPage(page: any, url: string): Promise<PageResult> {
+async function auditPage(page: import('playwright').Page, url: string): Promise<PageResult> {
   const fullUrl = `http://localhost:4322${url}`;
   console.log(`\nAuditing: ${fullUrl}`);
   
