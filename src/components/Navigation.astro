@@ -1,6 +1,4 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
 interface Props {
   currentPath?: string;
   class?: string;
@@ -9,17 +7,14 @@ interface Props {
 
 const { currentPath = '', class: className = '', mobile = false } = Astro.props;
 
-// Get base path from Astro config
-const base = import.meta.env.BASE_URL;
-
-// Navigation links for wedding site
+// Navigation links for wedding site - use relative paths
 const links = [
-  { href: `${base}`, label: 'Accueil' },
-  { href: `${base}programme.html`, label: 'Programme' },
-  { href: `${base}infos.html`, label: 'Infos pratiques' },
-  { href: `${base}hebergements.html`, label: 'Hébergements' },
-  { href: `${base}galerie.html`, label: 'Galerie' },
-  { href: `${base}rsvp.html`, label: 'RSVP' },
+  { href: './', label: 'Accueil' },
+  { href: './programme.html', label: 'Programme' },
+  { href: './infos.html', label: 'Infos pratiques' },
+  { href: './hebergements.html', label: 'Hébergements' },
+  { href: './galerie.html', label: 'Galerie' },
+  { href: './rsvp.html', label: 'RSVP' },
 ];
 
 // Check if a link is active
