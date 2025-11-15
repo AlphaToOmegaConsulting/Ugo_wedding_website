@@ -10,6 +10,9 @@ const { currentPath = '', class: className = '', mobile = false } = Astro.props;
 // Get base path from Astro config
 const base = import.meta.env.BASE_URL;
 
+// Get current page path from Astro
+const currentUrl = Astro.url.pathname;
+
 // Helper to build URLs with proper slash handling
 function buildUrl(page: string): string {
   const normalizedBase = base.endsWith('/') ? base.slice(0, -1) : base;
@@ -28,10 +31,25 @@ const links = [
 
 // Check if a link is active
 const isActive = (href: string) => {
-  // Exact match for home page
-  if (href === '/' && currentPath === '/') return true;
-  // Prefix match for other pages
-  if (href !== '/' && currentPath.startsWith(href)) return true;
+  // Normalize current URL (remove trailing slash if not root)
+  const normalizedCurrent = currentUrl.endsWith('/') && currentUrl !== '/'
+    ? currentUrl.slice(0, -1)
+    : currentUrl;
+
+  // Normalize href (remove trailing slash if not root)
+  const normalizedHref = href.endsWith('/') && href !== '/'
+    ? href.slice(0, -1)
+    : href;
+
+  // Exact match
+  if (normalizedCurrent === normalizedHref) return true;
+
+  // For home page, also match base path variations
+  if (normalizedHref === base.replace(/\/$/, '') &&
+      (normalizedCurrent === base.replace(/\/$/, '') || normalizedCurrent === base)) {
+    return true;
+  }
+
   return false;
 };
 
