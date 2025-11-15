@@ -4,7 +4,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://alphatoomegaconsulting.github.io',
+  base: '/Ugo_wedding_website',
   output: 'static',
   build: {
     format: 'directory',
