@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Story from '../components/sections/Story.astro';
+import Programme from '../components/sections/Programme.astro';
+import InfosPratiques from '../components/sections/InfosPratiques.astro';
+import Hebergements from '../components/sections/Hebergements.astro';
+import RSVPSection from '../components/sections/RSVPSection.astro';
+
+// Fetch sections
+const allSections = await getCollection('sections');
+const homeSections = allSections
+  .filter(s => s.id.includes('home') && s.data.visible)
+  .sort((a, b) => a.data.order - b.data.order);
+
+// Get section data by type
+const getSectionData = (type: string) => {
+  return homeSections.find(s => s.data.type === type)?.data.data;
+};
+
+const heroData = getSectionData('hero');
+const storyData = getSectionData('story');
+const programmeData = getSectionData('programme');
+const infosData = getSectionData('infos-pratiques');
+const hebergementsData = getSectionData('hebergements');
+const rsvpData = getSectionData('rsvp-section');
+---
+
+<BaseLayout
+  title="Ugo & Jeanne - Mariage"
+  description="Nous nous marions ! Retrouvez toutes les informations sur notre mariage."
+>
+  {heroData && <Hero {...heroData} />}
+  {storyData && <Story {...storyData} />}
+  {programmeData && <Programme {...programmeData} />}
+  {infosData && <InfosPratiques {...infosData} />}
+  {hebergementsData && <Hebergements {...hebergementsData} />}
+  {rsvpData && <RSVPSection {...rsvpData} />}
+</BaseLayout>

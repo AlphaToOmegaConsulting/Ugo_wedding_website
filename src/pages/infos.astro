@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InfosPratiques from '../components/sections/InfosPratiques.astro';
+import { getCollection } from 'astro:content';
+
+const infosData = (await getCollection('sections'))
+  .find(s => s.data.type === 'infos-pratiques')?.data.data;
+---
+
+<BaseLayout
+  title="Informations pratiques - Ugo & Jeanne"
+  description="Informations pratiques pour notre mariage"
+>
+  {infosData && <InfosPratiques {...infosData} />}
+</BaseLayout>

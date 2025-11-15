@@ -1,0 +1,16 @@
+{
+  "type": "hero",
+  "order": 0,
+  "visible": true,
+  "data": {
+    "title": "Ugo & Jeanne",
+    "subtitle": "Nous avons la joie de vous inviter à célébrer notre mariage",
+    "date": "Samedi 27 juin 2026 à Nîmes",
+    "image": "/hero-couple.jpg",
+    "cta": {
+      "label": "Confirmer ma présence",
+      "href": "/rsvp"
+    },
+    "variant": "centered"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "type": "infos-pratiques",
+  "order": 4,
+  "visible": true,
+  "data": {
+    "title": "Informations pratiques",
+    "sections": [
+      {
+        "icon": "📍",
+        "title": "Accès",
+        "content": "<p><strong>Cérémonie :</strong> Cathédrale Saint-Castor de Nîmes<br/>Place aux Herbes, 30000 Nîmes</p><p><strong>Réception :</strong> Château de Campuget<br/>1294 Route de Saint-Gilles, 30129 Manduel<br/>(15 min en voiture depuis la cathédrale)</p>"
+      },
+      {
+        "icon": "🚗",
+        "title": "Parking",
+        "content": "<p>Un parking gratuit est disponible sur place au Château de Campuget pour tous les invités.</p><p>Pour la cathédrale, privilégiez le parking Esplanade (5 min à pied) ou les parkings du centre-ville.</p>"
+      },
+      {
+        "icon": "☀️",
+        "title": "Météo",
+        "content": "<p>Il peut faire très chaud en juin à Nîmes (25-30°C). Pensez à vous hydrater régulièrement et à prévoir :</p><ul><li>Crème solaire</li><li>Chapeau ou ombrelle</li><li>Lunettes de soleil</li></ul>"
+      },
+      {
+        "icon": "👔",
+        "title": "Dress code",
+        "content": "<p><strong>Tenue élégante et estivale</strong></p><p>Les hommes : costume léger ou tenue chic décontractée</p><p>Les femmes : robe ou ensemble élégant</p><p>Conseil : privilégiez des tissus légers et des couleurs claires pour le confort.</p>"
+      },
+      {
+        "icon": "📞",
+        "title": "Contacts",
+        "content": "<p>Pour toute question ou urgence le jour J :</p><p><strong>Témoins :</strong><br/>Marie : 06 XX XX XX XX<br/>Thomas : 06 XX XX XX XX</p>"
+      },
+      {
+        "icon": "🎁",
+        "title": "Liste de mariage",
+        "content": "<p>Votre présence est notre plus beau cadeau !</p><p>Si vous souhaitez nous gâter, une liste de mariage est disponible chez <strong>La Maison Blanche</strong> à Nîmes.</p><p>Une urne sera également à votre disposition le jour du mariage.</p>"
+      }
+    ],
+    "layout": "grid",
+    "columns": 3
+  }
+}

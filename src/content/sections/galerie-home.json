@@ -1,0 +1,10 @@
+{
+  "type": "gallery",
+  "order": 6,
+  "visible": true,
+  "data": {
+    "title": "Galerie photo",
+    "description": "Les photos seront disponibles après le mariage.",
+    "images": []
+  }
+}

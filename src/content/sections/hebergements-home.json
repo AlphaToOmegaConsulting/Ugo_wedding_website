@@ -1,0 +1,36 @@
+{
+  "type": "hebergements",
+  "order": 3,
+  "visible": true,
+  "data": {
+    "title": "Hébergements recommandés",
+    "subtitle": "Nous avons sélectionné quelques établissements pour votre séjour",
+    "hotels": [
+      {
+        "name": "Château de Campuget",
+        "address": "1294 Route de Saint-Gilles, 30129 Manduel",
+        "description": "Profitez d'une chambre au cœur du domaine où se déroule la réception. Idéal pour prolonger la fête sans souci de transport ! Chambres d'hôtes de charme dans un cadre historique exceptionnel.",
+        "distance": "Sur place (lieu de réception)",
+        "phone": "04 66 20 20 15",
+        "website": "https://www.chateaudecampuget.com"
+      },
+      {
+        "name": "Hôtel Le Président",
+        "address": "10 Avenue Carnot, 30127 Bellegarde",
+        "description": "Hôtel moderne et confortable situé à Bellegarde. Excellent rapport qualité-prix, parking gratuit. À seulement 10 minutes en voiture du Château de Campuget.",
+        "distance": "5 km du château (10 min)",
+        "phone": "04 66 01 11 45",
+        "website": "https://www.hotel-le-president.fr"
+      },
+      {
+        "name": "Domaine des Clos",
+        "address": "Route de Nîmes, 30300 Beaucaire",
+        "description": "Chambres d'hôtes de charme dans un cadre verdoyant et paisible. Piscine extérieure, jardin méditerranéen. Parfait pour un séjour relaxant dans la région.",
+        "distance": "8 km du château (12 min)",
+        "phone": "04 66 59 21 32",
+        "website": "https://www.domainedesclos.com"
+      }
+    ],
+    "columns": 3
+  }
+}

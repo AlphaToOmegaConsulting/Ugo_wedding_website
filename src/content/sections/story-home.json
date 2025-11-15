@@ -1,0 +1,27 @@
+{
+  "type": "story",
+  "order": 1,
+  "visible": true,
+  "data": {
+    "title": "Notre histoire",
+    "content": "<p>Ugo Delassus et Jeanne Lauvergne se marient le 27 juin 2026.</p><p>Leur histoire commence dans le Sud, entre soleil, rires et complicité. C'est une rencontre inattendue qui a changé leurs vies, transformant une simple connaissance en une histoire d'amour profonde et sincère.</p><p>Au fil des années, leur complicité n'a cessé de grandir. Entre voyages, projets communs et moments de partage, ils ont construit ensemble les fondations d'une vie à deux, entourés de leurs familles et amis.</p><p>Aujourd'hui, ils célèbrent leur union dans le cadre magnifique de la Provence, là où tout a commencé, entourés de ceux qu'ils aiment dans une ambiance chaleureuse et authentique.</p>",
+    "timeline": [
+      {
+        "year": "2020",
+        "event": "Première rencontre dans le Sud de la France"
+      },
+      {
+        "year": "2023",
+        "event": "Installation ensemble et début de leur aventure commune"
+      },
+      {
+        "year": "2024",
+        "event": "La grande demande et les fiançailles"
+      },
+      {
+        "year": "2026",
+        "event": "Le grand jour : leur mariage à Nîmes !"
+      }
+    ]
+  }
+}

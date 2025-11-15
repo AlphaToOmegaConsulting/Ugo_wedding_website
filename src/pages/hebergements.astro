@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HebergementsSection from '../components/sections/Hebergements.astro';
+import { getCollection } from 'astro:content';
+
+const hebergementsData = (await getCollection('sections'))
+  .find(s => s.data.type === 'hebergements')?.data.data;
+---
+
+<BaseLayout
+  title="Hébergements - Ugo & Jeanne"
+  description="Options d'hébergement pour notre mariage"
+>
+  {hebergementsData && <HebergementsSection {...hebergementsData} />}
+</BaseLayout>

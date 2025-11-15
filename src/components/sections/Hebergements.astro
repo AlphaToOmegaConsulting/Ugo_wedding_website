@@ -1,0 +1,111 @@
+---
+import Card from '../primitives/Card.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  hotels: Array<{
+    name: string;
+    address: string;
+    distance?: string;
+    phone?: string;
+    website?: string;
+    description?: string;
+    image?: string;
+  }>;
+  columns?: 2 | 3;
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  hotels,
+  columns = 2,
+  class: className = '',
+} = Astro.props;
+
+const gridClasses = columns === 3 
+  ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+  : 'grid-cols-1 md:grid-cols-2';
+
+const sectionClasses = [
+  'py-16 md:py-24 bg-gray-50',
+  className,
+].filter(Boolean).join(' ');
+---
+
+<section class={sectionClasses}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-brand-primary mb-4">
+        {title}
+      </h2>
+      {subtitle && (
+        <p class="text-lg sm:text-xl text-gray-600">
+          {subtitle}
+        </p>
+      )}
+    </div>
+
+    <div class={`grid ${gridClasses} gap-6 lg:gap-8`}>
+      {hotels.map((hotel) => (
+        <Card variant="elevated" padding="lg">
+          {hotel.image && (
+            <img
+              src={hotel.image}
+              alt={hotel.name}
+              class="w-full h-48 object-cover rounded-md mb-4"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+
+          <h3 class="text-xl font-bold text-brand-primary mb-3">
+            {hotel.name}
+          </h3>
+
+          <div class="space-y-2 text-gray-700 mb-4">
+            <p class="text-sm">
+              📍 {hotel.address}
+            </p>
+
+            {hotel.distance && (
+              <p class="text-sm">
+                🚗 {hotel.distance}
+              </p>
+            )}
+
+            {hotel.phone && (
+              <p class="text-sm">
+                📞 <a href={`tel:${hotel.phone.replace(/\s/g, '')}`} class="text-brand-accent hover:underline">
+                  {hotel.phone}
+                </a>
+              </p>
+            )}
+          </div>
+
+          {hotel.description && (
+            <p class="text-base text-gray-600 mb-4">
+              {hotel.description}
+            </p>
+          )}
+
+          {hotel.website && (
+            <a
+              href={hotel.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-brand-accent hover:text-brand-primary font-medium transition-colors"
+            >
+              Voir le site web
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

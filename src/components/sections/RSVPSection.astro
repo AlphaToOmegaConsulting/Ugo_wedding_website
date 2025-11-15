@@ -1,0 +1,65 @@
+---
+import ButtonLink from '../primitives/ButtonLink.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  cta: {
+    label: string;
+    href: string;
+  };
+  deadline?: string;
+  variant?: 'default' | 'centered';
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  cta,
+  deadline,
+  variant = 'centered',
+  class: className = '',
+} = Astro.props;
+
+const variantClasses = {
+  default: 'bg-gray-50',
+  centered: 'bg-white shadow-md',
+};
+
+const sectionClasses = [
+  'py-16 md:py-20 lg:py-24',
+  variantClasses[variant],
+  className,
+].filter(Boolean).join(' ');
+---
+
+<section class={sectionClasses}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-brand-primary mb-4 lg:mb-6">
+      {title}
+    </h2>
+
+    {description && (
+      <p class="text-lg sm:text-xl text-gray-600 mb-6">
+        {description}
+      </p>
+    )}
+
+    {deadline && (
+      <p class="text-base text-gray-700 mb-8 font-medium">
+        Merci de répondre avant le <span class="text-brand-accent font-bold">{deadline}</span>
+      </p>
+    )}
+
+    <div class="flex justify-center">
+      <ButtonLink
+        href={cta.href}
+        variant="primary"
+        size="lg"
+      >
+        {cta.label}
+      </ButtonLink>
+    </div>
+  </div>
+</section>

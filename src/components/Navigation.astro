@@ -1,0 +1,56 @@
+---
+interface Props {
+  currentPath?: string;
+  class?: string;
+  mobile?: boolean;
+}
+
+const { currentPath = '', class: className = '', mobile = false } = Astro.props;
+
+// Navigation links for wedding site
+const links = [
+  { href: '/', label: 'Accueil' },
+  { href: '/programme', label: 'Programme' },
+  { href: '/infos', label: 'Infos pratiques' },
+  { href: '/hebergements', label: 'Hébergements' },
+  { href: '/galerie', label: 'Galerie' },
+  { href: '/rsvp', label: 'RSVP' },
+];
+
+// Check if a link is active
+const isActive = (href: string) => {
+  // Exact match for home page
+  if (href === '/' && currentPath === '/') return true;
+  // Prefix match for other pages
+  if (href !== '/' && currentPath.startsWith(href)) return true;
+  return false;
+};
+
+// Different styles for desktop vs mobile
+const getLinkClass = (href: string) => {
+  if (mobile) {
+    return `text-base font-medium px-3 py-2 rounded-md transition-colors focus-ring ${
+      isActive(href)
+        ? 'text-brand-primary bg-blue-50'
+        : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
+    }`;
+  }
+  return `text-sm font-medium transition-colors focus-ring rounded px-2 py-1 ${
+    isActive(href)
+      ? 'text-brand-primary border-b-2 border-brand-primary'
+      : 'text-gray-700 hover:text-brand-primary'
+  }`;
+};
+---
+
+<nav class={className} aria-label="Navigation principale">
+  {links.map((link) => (
+    <a
+      href={link.href}
+      class={getLinkClass(link.href)}
+      aria-current={isActive(link.href) ? 'page' : undefined}
+    >
+      {link.label}
+    </a>
+  ))}
+</nav>

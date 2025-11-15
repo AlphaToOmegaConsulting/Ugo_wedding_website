@@ -1,0 +1,14 @@
+{
+  "type": "cta",
+  "order": 5,
+  "visible": true,
+  "data": {
+    "title": "Confirmez votre présence",
+    "description": "Merci de confirmer votre venue avant le 1er avril 2026.",
+    "cta": {
+      "label": "Répondre maintenant",
+      "href": "/rsvp"
+    },
+    "variant": "centered"
+  }
+}

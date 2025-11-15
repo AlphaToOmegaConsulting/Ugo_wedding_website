@@ -1,0 +1,35 @@
+---
+interface Props {
+  contactEmail?: string;
+}
+
+const { contactEmail = 'contact@example.com' } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col items-center justify-center space-y-4">
+      <!-- Brand -->
+      <div class="text-2xl font-bold text-white">
+        Ugo & Jeanne
+      </div>
+
+      <!-- Contact -->
+      <div class="text-sm text-gray-400">
+        <a
+          href={`mailto:${contactEmail}`}
+          class="hover:text-white transition-colors focus-ring rounded"
+        >
+          {contactEmail}
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-sm text-gray-400">
+        <p>© {currentYear} Tous droits réservés.</p>
+      </div>
+    </div>
+  </div>
+</footer>

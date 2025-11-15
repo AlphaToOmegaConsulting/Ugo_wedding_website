@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Fetch gallery section data
+const allSections = await getCollection('sections');
+const gallerySection = allSections.find(s => s.data.type === 'gallery');
+const galleryData = gallerySection?.data.data;
+---
+
+<BaseLayout
+  title="Galerie - Ugo & Jeanne"
+  description="Photos du mariage d'Ugo et Jeanne - 27 juin 2026"
+>
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Title -->
+      <h1 class="text-4xl font-bold text-center mb-4">
+        {galleryData?.title || 'Galerie photo'}
+      </h1>
+      
+      <!-- Description -->
+      {galleryData?.description && (
+        <p class="text-center text-lg mb-12 text-gray-600">
+          {galleryData.description}
+        </p>
+      )}
+      
+      <!-- Gallery Grid or Placeholder -->
+      {galleryData?.images && galleryData.images.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryData.images.map((image: any) => (
+            <div class="aspect-square overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={image.src}
+                alt={image.alt || 'Photo du mariage'}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <p class="text-xl text-gray-500">
+            Les photos seront bientôt disponibles !
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

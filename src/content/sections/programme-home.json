@@ -1,0 +1,54 @@
+{
+  "type": "programme",
+  "order": 2,
+  "visible": true,
+  "data": {
+    "title": "Programme du 27 juin 2026",
+    "subtitle": "Une journée inoubliable en notre compagnie",
+    "schedule": [
+      {
+        "time": "14h30",
+        "event": "Cérémonie religieuse",
+        "location": "Cathédrale Saint-Castor de Nîmes",
+        "description": "Nous vous attendons pour célébrer notre union. Merci d'arriver 15 minutes en avance."
+      },
+      {
+        "time": "16h00",
+        "event": "Vin d'honneur",
+        "location": "Parvis de la Cathédrale",
+        "description": "Moment convivial pour célébrer avec nos proches avant de rejoindre le château."
+      },
+      {
+        "time": "17h30",
+        "event": "Transfert vers le château",
+        "location": "Route vers Manduel",
+        "description": "Départ groupé vers le Château de Campuget (15 min de route)."
+      },
+      {
+        "time": "18h00",
+        "event": "Cocktail de bienvenue",
+        "location": "Château de Campuget",
+        "description": "Découverte du domaine, petits fours et rafraîchissements dans les jardins du château."
+      },
+      {
+        "time": "20h30",
+        "event": "Dîner de gala",
+        "location": "Salle de réception du Château",
+        "description": "Repas assis dans une ambiance chaleureuse et élégante. Menu gastronomique préparé par le chef."
+      },
+      {
+        "time": "23h00",
+        "event": "Ouverture du bal",
+        "location": "Piste de danse du Château",
+        "description": "Première danse des mariés suivie de la soirée dansante jusqu'au bout de la nuit !"
+      },
+      {
+        "time": "02h00",
+        "event": "Buffet de nuit",
+        "location": "Château de Campuget",
+        "description": "Pause gourmande pour reprendre des forces avant de continuer la fête."
+      }
+    ],
+    "variant": "timeline"
+  }
+}
