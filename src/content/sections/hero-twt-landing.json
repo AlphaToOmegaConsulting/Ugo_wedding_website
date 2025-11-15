@@ -1,7 +1,7 @@
 {
   "type": "hero",
   "order": 1,
-  "visible": true,
+  "visible": false,
   "data": {
     "title": "Tech Women Together",
     "subtitle": "Connectez, apprenez et grandissez avec une communauté de femmes passionnées par la technologie",

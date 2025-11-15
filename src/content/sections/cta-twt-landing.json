@@ -1,7 +1,7 @@
 {
   "type": "cta",
   "order": 5,
-  "visible": true,
+  "visible": false,
   "data": {
     "title": "Prête à rejoindre la communauté ?",
     "description": "Inscrivez-vous dès aujourd'hui et commencez à faire partie d'un réseau de femmes inspirantes dans la tech.",

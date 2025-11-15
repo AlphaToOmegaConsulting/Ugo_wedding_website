@@ -9,7 +9,7 @@
     "image": "/hero-couple.jpg",
     "cta": {
       "label": "Confirmer ma présence",
-      "href": "/Ugo_wedding_website/rsvp.html"
+      "href": "rsvp.html"
     },
     "variant": "centered"
   }

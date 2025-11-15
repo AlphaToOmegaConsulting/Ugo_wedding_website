@@ -1,7 +1,7 @@
 {
   "type": "cta",
   "order": 5,
-  "visible": true,
+  "visible": false,
   "data": {
     "title": "Rejoignez notre communauté",
     "description": "Inscrivez-vous dès aujourd'hui pour recevoir nos actualités et participer à nos événements.",
