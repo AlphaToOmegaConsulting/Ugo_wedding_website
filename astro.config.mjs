@@ -8,8 +8,9 @@ export default defineConfig({
   base: '/Ugo_wedding_website',
   output: 'static',
   build: {
-    format: 'directory',
+    format: 'file',
   },
+  trailingSlash: 'ignore',
   integrations: [
     tailwind(),
     sitemap({
